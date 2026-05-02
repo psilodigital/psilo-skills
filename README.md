@@ -40,6 +40,12 @@ git pull   # symlinks auto-update — no re-install needed
 
 ## Skills
 
+### General
+
+| Skill | Command | Description |
+|-------|---------|-------------|
+| Grill Me | `/grill-me` | Stress-test any plan or design through relentless one-at-a-time questioning |
+
 ### n8n
 
 | Skill | Command | Description |
