@@ -2,49 +2,64 @@
 
 A curated collection of Claude skills and plugins built by [Psilo Digital](https://psilodigital.com) — for our team, our clients, and anyone who wants to level up their Claude workflow.
 
-## What's this?
+## Quick Install
 
-Each skill in this repo is a ready-to-use Claude plugin that adds a slash command or automated behavior to Claude Code / Claude Apps. Browse, copy, or install in one click.
+```bash
+git clone git@github.com:psilodigital/psilo-skills.git
+cd psilo-skills
+./install.sh
+```
+
+Restart Claude Code — all skills are available as `/skill-name` commands.
+
+**Install a single category or skill:**
+```bash
+./install.sh n8n                     # all n8n skills
+./install.sh n8n-code-javascript     # one specific skill
+./install.sh --list                  # see everything
+./install.sh --uninstall             # remove all
+```
+
+**Stay up to date:**
+```bash
+git pull   # symlinks auto-update — no re-install needed
+```
+
+---
 
 ## Skills
 
-| Skill | Description | Category |
-|-------|-------------|----------|
-| _coming soon_ | | |
+### n8n
 
-## One-click install
+| Skill | Command | Description |
+|-------|---------|-------------|
+| n8n Code — JavaScript | `/n8n-code-javascript` | Write & debug JS in n8n Code nodes |
+| n8n Code — Python | `/n8n-code-python` | Write & debug Python in n8n Code nodes |
+| n8n Expression Syntax | `/n8n-expression-syntax` | Master n8n expressions and templating |
+| n8n MCP Tools Expert | `/n8n-mcp-tools-expert` | Use MCP tools effectively inside n8n |
+| n8n Node Configuration | `/n8n-node-configuration` | Configure any n8n node correctly |
+| n8n Validation Expert | `/n8n-validation-expert` | Validate and debug n8n workflows |
+| n8n Workflow Patterns | `/n8n-workflow-patterns` | Common workflow architecture patterns |
 
-> Install any skill directly into your Claude app via the plugin marketplace or local setup.
-
-### Via Plugin Marketplace _(coming soon)_
-
-Each skill will include a marketplace link for one-click install into your Claude app.
-
-### Local Setup
-
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/psilodigital/psilo-skills.git
-   ```
-2. Navigate into a skill folder and follow its `README.md`.
-3. Copy the skill definition into your Claude project's `.claude/` directory.
+---
 
 ## Structure
 
 ```
-psilo-skills/
-├── skills/
-│   └── <skill-name>/
-│       ├── README.md        # What it does, how to install
-│       ├── skill.md         # Skill definition (Claude prompt/config)
-│       └── settings.json    # Optional hook/permission config
-└── README.md
+skills/
+  <category>/              # domain grouping (n8n, engineering, sales…)
+    <skill-name>/
+      SKILL.md             # the Claude skill definition (linked to ~/.claude/skills/)
+      *.md                 # reference docs loaded by the skill
+install.sh                 # installer / uninstaller
 ```
 
 ## Contributing
 
-Internal team: open a PR with your skill in `skills/<skill-name>/`. Include a README and a working `skill.md`.
+1. Fork or branch
+2. Add your skill under `skills/<category>/<skill-name>/SKILL.md`
+3. Open a PR — include a short description in the skills table above
 
 ---
 
-Built with love by [Psilo Digital](https://psilodigital.com)
+Built by [Psilo Digital](https://psilodigital.com)
