@@ -4,15 +4,26 @@ A curated collection of Claude skills and plugins built by [Psilo Digital](https
 
 ## Quick Install
 
+**Clone & install (team / contributors):**
 ```bash
 git clone git@github.com:psilodigital/psilo-skills.git
 cd psilo-skills
 ./install.sh
 ```
 
+**One-liner for clients (no git required):**
+```bash
+curl -sSL https://raw.githubusercontent.com/psilodigital/psilo-skills/main/install.sh | bash
+```
+
+Install a specific category only:
+```bash
+curl -sSL https://raw.githubusercontent.com/psilodigital/psilo-skills/main/install.sh | bash -s -- n8n
+```
+
 Restart Claude Code — all skills are available as `/skill-name` commands.
 
-**Install a single category or skill:**
+**Install a single category or skill (if cloned):**
 ```bash
 ./install.sh n8n                     # all n8n skills
 ./install.sh n8n-code-javascript     # one specific skill
