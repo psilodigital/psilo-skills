@@ -63,6 +63,29 @@ git pull   # directory symlinks auto-update — no re-install needed
 
 ---
 
+## External Plugins
+
+Third-party plugins tracked as git submodules. See [PLUGINS.md](./PLUGINS.md) for install instructions and full details.
+
+| Plugin | Version | What it does |
+|--------|---------|--------------|
+| [GSD — Get Shit Done](https://github.com/gsd-build/get-shit-done) | 1.39.0-rc.4 | Project management & execution framework (`/gsd-*` commands) |
+
+**Update a plugin to latest:**
+```bash
+git submodule update --remote external/gsd
+git add external/gsd && git commit -m "chore: update GSD submodule" && git push
+```
+
+**After cloning this repo, init submodules:**
+```bash
+git clone --recurse-submodules git@github.com:psilodigital/psilo-skills.git
+# or if already cloned:
+git submodule update --init --recursive
+```
+
+---
+
 ## Structure
 
 ```
@@ -80,8 +103,11 @@ skills/
       SKILL.md
   deprecated/
     README.md          # retired skills, not in plugin.json
+external/
+  gsd/                 # GSD submodule (git submodule update --remote to update)
 install.sh             # symlink installer / uninstaller
 CLAUDE.md              # contributor rules
+PLUGINS.md             # external plugin registry
 ```
 
 ## Contributing
